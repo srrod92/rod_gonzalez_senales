@@ -1,4 +1,5 @@
 extends TextureButton
+var cubo_violet = preload("res://scenes/Blocks/Violet/BlockViolet.tscn")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -12,4 +13,9 @@ func _process(delta):
 
 
 func _on_button_down():
+	generate_block()
 	pass # Replace with function body.
+
+func generate_block():
+	var violetNew = cubo_violet.instantiate()
+	add_child(violetNew)

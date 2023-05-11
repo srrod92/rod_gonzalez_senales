@@ -1,5 +1,5 @@
 extends TextureButton
-
+var cubo_red = preload("res://scenes/Blocks/Red/BlockRed.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,4 +12,9 @@ func _process(delta):
 
 
 func _on_button_down():
-	pass # Replace with function body.
+	generate_block()
+	pass 
+	
+func generate_block():
+	var redNew = cubo_red.instantiate()
+	add_child(redNew)
