@@ -8,6 +8,10 @@ func _ready():
 	# Inicializa el texto de "CountLabel" usando el texto
 	# Constante "INSTANCES_TEXT" más el valor de "instancesCount" como Texto
 	$CountLabel.text = INSTANCES_TEXT + str(instancesCount)
+	var redGen = get_node("RedGenerator")
+	redGen.connect("button_down", count_new_instance)
+	var violetgen = get_node("VioletGenerator")
+	violetgen.connect("button_down", count_new_instance)
 	pass
 	
 func count_new_instance():
